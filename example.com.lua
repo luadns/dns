@@ -9,5 +9,5 @@ a(_a, "1.2.3.4")
 cname("www", _a)
 cname("ftp", _a)
 
--- Templates
+-- Templates (see templates.lua)
 google_app(_a)
