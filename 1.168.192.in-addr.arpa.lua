@@ -1,0 +1,7 @@
+ptr(1, "router.example.net")
+ptr(2, "a.ns.example.net")
+ptr(3, "b.ns.example.net")
+ptr(11, "mx1.example.net")
+ptr(12, "mx2.example.net")
+ptr(100, "user.example.net")
+ptr(200, "sipserver.example.net")
