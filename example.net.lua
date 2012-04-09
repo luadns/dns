@@ -37,3 +37,7 @@ srv("_sip._tcp", "sipserver.example.net", 5060)
 -- Wildcard records
 a("*.user", "192.168.1.100")
 mx("*.user", concat("mail", _a))
+
+-- Slaves
+slave("7.7.7.1")
+slave("7.7.7.2")
