@@ -38,7 +38,9 @@ srv("_sip._tcp", "sipserver.example.net", 5060)
 a("*.user", "192.168.1.100")
 mx("*.user", concat("mail", _a))
 
--- Slave servers - the system will create required A and NS records
+-- Slave servers
+-- add 3 slave servers (a.ns.example.net, b.ns.example.net, c.ns.example.net)
+-- required A and NS records are created automatically
 slave("a.ns", "7.7.7.1")
 slave("b.ns", "7.7.7.2")
 slave("c.ns", "7.7.7.3")
