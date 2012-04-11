@@ -39,8 +39,16 @@ a("*.user", "192.168.1.100")
 mx("*.user", concat("mail", _a))
 
 -- Slave servers
--- add 3 slave servers (a.ns.example.net, b.ns.example.net, c.ns.example.net)
+-- Please, configure your ACLs on slave servers to use axfr.luadns.net
+
+-- Add 2 slave servers (ns1.example.net, ns2.example.net)
 -- required A and NS records are created automatically
-slave("a.ns", "7.7.7.1")
-slave("b.ns", "7.7.7.2")
-slave("c.ns", "7.7.7.3")
+slave("ns1", "1.1.1.1")
+slave("ns2", "1.1.1.2")
+
+-- Third-party slaves
+-- required NS records are created automatically
+slave("ns1.third-party-ns.com", "1.1.1.1")
+slave("ns1.third-party-ns.com", "1.1.1.2")
+
+
