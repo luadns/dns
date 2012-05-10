@@ -29,8 +29,16 @@ example.org.        IN  SOA   ns1.luadns.net.   hostmaster.luadns.net.  (
 ;                        NS      ns4.luadns.net.
 
 ; The rest of records
-                        A       1.1.1.1
+@                       A       1.1.1.1
+@                       MX      5 aspmx.l.google.com.
+
 www                     CNAME   example.org.
 mail                    CNAME   ghs.google.com.
-                        MX      5 aspmx.l.google.com.
+
+; SPF record, see http://www.openspf.org/
+@                       TXT     "v=spf1 a mx include:_spf.google.com ~all"
+
+; SIP service available at the host sip.example.com
+_sip._udp               SRV     0 0 5060 sip.example.com.
+
 
