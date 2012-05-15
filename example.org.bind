@@ -14,7 +14,7 @@
 
 ; The system will generate and maintain domain's SOA record automatically,
 ; SOA records found in *.bind files are simply ignored
-example.org.        IN  SOA   ns1.luadns.net.   hostmaster.luadns.net.  (
+example.org.        IN  SOA   ns1.bind.net.   hostmaster.bind.net.  (
                               2012050901  ; serial
                               20m         ; refresh (20 minutes)
                               2m          ; retry (2 minutes)
@@ -22,11 +22,11 @@ example.org.        IN  SOA   ns1.luadns.net.   hostmaster.luadns.net.  (
                               1h          ; minimum (1 hour)
                               )
 
-; NS records with system name servers are added automatically
-;                        NS      ns1.luadns.net.
-;                        NS      ns2.luadns.net.
-;                        NS      ns3.luadns.net.
-;                        NS      ns4.luadns.net.
+; Domain NS records are replaced with system name servers
+                        NS      ns1.bind.net.
+                        NS      ns2.bind.net.
+                        NS      ns3.bind.net.
+                        NS      ns4.bind.net.
 
 ; The rest of records
 @                       A       1.1.1.1
