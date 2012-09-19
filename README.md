@@ -2,7 +2,7 @@ Example git repository with DNS settings, read more here:
 [http://www.luadns.com/help.html](http://www.luadns.com/help.html)
 
 To use a domain with Luadns service, add it to git repository using
-<DOMAIN-NAME>.lua or <DOMAIN-NAME>.bind and push updates with git.
+*DOMAIN-NAME*.lua or *DOMAIN-NAME*.bind and push updates with git.
 
 To remove a domain from Luadns service, remove it's configuration
 file from git repository and push updates with git.
