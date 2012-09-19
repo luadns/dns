@@ -13,5 +13,5 @@ file from git repository and push updates with git.
 * example.org.bind - example zone using Bind zone format
 * 1.168.192.in-addr.arpa.lua - reverse zone using Lua zone format
 * domains.route53 - domains exported to Amazon Route 53
-  (one domain name per line or use * to export all)
+  (one domain per line or use * to export all)
 
