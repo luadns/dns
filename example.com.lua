@@ -1,6 +1,6 @@
 -- File: example.com.lua
 -- Zone: example.com
--- SOA record si automatically generated
+-- SOA record is automatically generated
 -- Variable _a is replaced with zone name
 -- _a = "example.com"
 
