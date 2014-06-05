@@ -1,0 +1,10 @@
+---
+# File: example.org.yml
+# This file uses [YAML](http://www.yaml.org/)
+# format to configure `example.org` zone.
+#
+# Specify slaves which are allowed to do AXFR
+# transfers for this zone.
+slaves:
+ - 1.1.1.1
+ - 2.2.2.2
