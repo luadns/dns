@@ -1,1 +1,0 @@
--- This file is depreciated, use `templates` directory instead

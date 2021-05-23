@@ -38,7 +38,6 @@ there.
 
 Examples:
 
-* [templates.lua](templates.lua) - This file is executed before each .lua zone file (deprecated)
 * [templates](templates) - All .lua files from this directory are executed before each .lua zone file
 * [example.com.lua](example.com.lua) - Example zone using Lua zone format
 * [example.com.clones](example.com.clones) - Domain aliases example (one domain per line)
