@@ -10,7 +10,7 @@
 ; Default TTL is account's [default TTL](https://api.luadns.com/users/edit),
 ; you may change the default TTL with $TTL directive
 ; Example:
-; $TTL 3600             ; 1 hour
+$TTL 86400 ; 1 day
 
 ; The system will generate and maintain domain's SOA record automatically,
 ; SOA records found in *.bind files are simply ignored
