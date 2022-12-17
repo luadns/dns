@@ -14,7 +14,7 @@ git, the zone and it's records will be added to LuaDNS name servers:
 
 ```
 touch example.com.lua
-git add git example.com.lua
+git add example.com.lua
 git commit -m "Add example.com zone" example.com.lua
 git push
 ```
