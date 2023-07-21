@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # This is an example script to be used as pre-commit hook.
 # It builds a ZIP archive with your DNS settings and submit it for validation.
 #
@@ -13,16 +13,16 @@ set -euf -o pipefail
 
 USERNAME="user@example.com"
 PASSWORD="__LUADNS_API_KEY__" # change me
-ARCHIVE="`mktemp /tmp/archive-XXXX`.zip"
+ARCHIVE="$(mktemp /tmp/archive-XXXX).zip"
 
 # Remove temp file on exit.
-trap "rm -f ${ARCHIVE}" EXIT
+trap 'rm -f "${ARCHIVE}"' EXIT
 
-echo "===> Creating `basename ${ARCHIVE}` archive ..."
-zip -r --quiet ${ARCHIVE} `git ls-files`
+echo "===> Creating $(basename "$ARCHIVE") archive ..."
+zip -r "$ARCHIVE" . -i "$(git ls-files)"
 
-echo "===> Checking `basename ${ARCHIVE}` archive ..."
+echo "===> Checking $(basename "$ARCHIVE") archive ..."
 curl --silent --user "${USERNAME}:${PASSWORD}" \
-      --json '{"file" : "'"`base64 -i $ARCHIVE -o -`"'"}' \
-      --request POST https://api.luadns.com/v1/githooks/pre-commit \
-      | jq
+    --json '{"file" : "'"$(base64 -i "$ARCHIVE")"'"}' -o - \
+    --request POST https://api.luadns.com/v1/githooks/pre-commit \
+    | jq
