@@ -43,3 +43,9 @@ Examples:
 * [example.com.clones](example.com.clones) - Domain aliases example (one domain per line)
 * [example.org.bind](example.org.bind) - Example zone using Bind zone format
 * [1.168.192.in-addr.arpa.lua](1.168.192.in-addr.arpa.lua) - Reverse zone using Lua zone format
+
+## Pre-commit Hook
+
+When changes are pushed to the git repository users are receiving an email with
+the build status. The workflow can be speed up by using a [pre-commit
+hook](.githooks/pre-commit) which validates your DNS files by running syntax checks.
