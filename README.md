@@ -30,7 +30,24 @@ git commit -m "Remove example.com zone" example.com.lua
 git push
 ```
 
-## Templates
+## System Templates
+
+You can find [here](https://github.com/luadns/templates) ready to use templates for common services.
+
+Example Usage:
+
+```lua
+-- File: example.com.lua
+-- Zone: example.com
+
+-- Load system templates.
+local templates = require("templates")
+
+-- Apply Google Workspace template.
+templates:google_workspace()
+```
+
+## Custom Templates
 
 The `.lua` files from `templates` directory of your repository are executed
 before other `.lua` files. You can put your global functions and variables
