@@ -30,6 +30,29 @@ git commit -m "Remove example.com zone" example.com.lua
 git push
 ```
 
+## Supported Records
+
+* A
+* AAAA
+* ALIAS
+* CAA
+* CNAME
+* DS
+* FORWARD
+* HTTPS
+* MX
+* NS
+* PTR
+* REDIRECT
+* SOA
+* SPF
+* SRV
+* SSHFP
+* TLSA
+* TXT
+
+Click [here](https://www.luadns.com/help.html#resource-records) for an up-to-date list of supported DNS records.
+
 ## System Templates
 
 You can find [here](https://github.com/luadns/templates) ready to use templates for common services.
