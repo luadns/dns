@@ -2,7 +2,7 @@
 # This is an example script to be used as pre-commit hook.
 # It builds a ZIP archive with your DNS settings and submit it for validation.
 #
-# 1. You need to replace the PASSWORD variable value with your API key.
+# 1. You must replace the USERNAME and PASSWORD variables.
 # 2. Enable pre-commit hook by setting hooks directory to .githooks:
 #    git config core.hooksPath .githooks
 #
@@ -11,17 +11,19 @@
 
 set -euf -o pipefail
 
-USERNAME="user@example.com"
+USERNAME="user@example.com"   # change me
 PASSWORD="__LUADNS_API_KEY__" # change me
-ARCHIVE="`mktemp /tmp/archive-XXXX`.zip"
+ARCHIVE=$(mktemp /tmp/archive-XXXX).zip
 
-# Remove temp file on exit.
-trap "rm -f ${ARCHIVE}" EXIT
+cleanup_on_exit() {
+  rm -f $ARCHIVE
+}
+trap cleanup_on_exit EXIT
 
-echo "===> Creating `basename ${ARCHIVE}` archive ..."
-zip -r --quiet ${ARCHIVE} `git ls-files`
+echo "===> Creating ${ARCHIVE} archive ..."
+zip -r --quiet $ARCHIVE $(git ls-files)
 
-echo "===> Checking `basename ${ARCHIVE}` archive ..."
+echo "===> Checking ${ARCHIVE} archive ..."
 curl --silent --user "${USERNAME}:${PASSWORD}" \
       --json '{"file" : "'"$(base64 -w 0 < $ARCHIVE)"'"}' \
       --request POST https://api.luadns.com/v1/githooks/pre-commit \
