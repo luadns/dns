@@ -23,6 +23,6 @@ zip -r --quiet ${ARCHIVE} `git ls-files`
 
 echo "===> Checking `basename ${ARCHIVE}` archive ..."
 curl --silent --user "${USERNAME}:${PASSWORD}" \
-      --json '{"file" : "'"`base64 -i $ARCHIVE -o -`"'"}' \
+      --json '{"file" : "'"$(base64 -w 0 < $ARCHIVE)"'"}' \
       --request POST https://api.luadns.com/v1/githooks/pre-commit \
       | jq
