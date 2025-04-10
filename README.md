@@ -45,7 +45,6 @@ git push
 * PTR
 * REDIRECT
 * SOA
-* SPF
 * SRV
 * SSHFP
 * TLSA

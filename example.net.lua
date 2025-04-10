@@ -29,7 +29,7 @@ cname("www", _a)
 txt("", "google-site-verification=vEj1ZcGtXeM_UEjnCqQEhxPSqkS9IQ4PBFuh48FP8o4")
 
 -- SPF records
-spf("", "v=spf1 a mx ~all")
+txt("", "v=spf1 a mx ~all")
 
 -- SRV records
 srv("_sip._tcp", "sipserver.example.net", 5060)
