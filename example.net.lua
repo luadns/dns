@@ -12,11 +12,11 @@ a("mx2", "192.168.1.12")
 a("sipserver", "192.168.1.200")
 
 -- AAAA records
-aaaa(_a, "2001:4860:4860::8888")
+aaaa("", "2001:4860:4860::8888")
 
 -- MX records
-mx(_a, concat("mx1", _a), 10)
-mx(_a, concat("mx2", _a), 20)
+mx("", concat("mx1", _a), 10)
+mx("", concat("mx2", _a), 20)
 
 -- NS records
 ns("tokyo", concat("a.ns", _a))
@@ -26,10 +26,10 @@ ns("tokyo", concat("b.ns", _a))
 cname("www", _a)
 
 -- TXT records
-txt(_a, "google-site-verification=vEj1ZcGtXeM_UEjnCqQEhxPSqkS9IQ4PBFuh48FP8o4")
+txt("", "google-site-verification=vEj1ZcGtXeM_UEjnCqQEhxPSqkS9IQ4PBFuh48FP8o4")
 
 -- SPF records
-spf(_a, "v=spf1 a mx ~all")
+spf("", "v=spf1 a mx ~all")
 
 -- SRV records
 srv("_sip._tcp", "sipserver.example.net", 5060)
